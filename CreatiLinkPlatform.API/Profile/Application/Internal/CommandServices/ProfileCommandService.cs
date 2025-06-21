@@ -12,7 +12,7 @@ namespace CreatiLinkPlatform.API.Profile.Application.Internal.CommandServices;
 
 public class ProfileCommandService(
     IProfileRepository profileRepository,
-    IUserRepository userRepository, // ← nuevo parámetro
+    IUserRepository userRepository, 
     IUnitOfWork unitOfWork)
     : IProfileCommandService
 {
@@ -22,12 +22,11 @@ public class ProfileCommandService(
         var user = await userRepository.FindByIdAsync(command.UserId);
         if (user == null) return null;
 
-        // Validar si el usuario ya tiene un perfil creado
+     
         var existingProfile = await profileRepository.FindByUserIdAsync(command.UserId);
         if (existingProfile != null)
         {
-            // Puedes devolver null, lanzar excepción, o devolver el perfil existente según cómo manejes errores
-            // Por ejemplo, aquí retornamos null para indicar que ya existe:
+           
             return null;
         }
 

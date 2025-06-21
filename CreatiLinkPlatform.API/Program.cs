@@ -153,60 +153,31 @@ builder.Services.AddScoped<IIamContextFacade, IamContextFacade>();
 
 
 
-
-// 👇 Configura el puerto dinámico para Railway
-
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-builder.WebHost.UseUrls($"http://*:{port}");
-
-// Build app
 var app = builder.Build();
 
-
-// Ensure database is created
-/*
+// Inicialización de base de datos
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<AppDbContext>();
-
     context.Database.EnsureDeleted();
     context.Database.EnsureCreated();
-}*/
-/////////////
-
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    var context = services.GetRequiredService<AppDbContext>();
-
-    try
-    {
-        context.Database.EnsureCreated();
-        Console.WriteLine("✅ Base de datos verificada o creada.");
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("❌ Error al conectar con la base de datos: " + ex.Message);
-        // Podés loggear o ignorar para que no crashee en producción
-    }
 }
 
-
 // Middleware
-/*if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-}*/
-
-app.UseSwagger();
-app.UseSwaggerUI();
-
+}
 
 app.UseHttpsRedirection();
 app.UseCors("AllowSpecificOrigin");
+
+// ⚠️ AUTENTICACIÓN Y AUTORIZACIÓN
 app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();

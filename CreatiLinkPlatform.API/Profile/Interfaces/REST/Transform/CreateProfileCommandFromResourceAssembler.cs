@@ -8,7 +8,7 @@ public static class CreateProfileCommandFromResourceAssembler
     public static CreateProfileCommand ToCommand(CreateProfileResource resource, int userId)
     {
         return new CreateProfileCommand(
-            userId, // ← lo agregas aquí
+            userId, 
             resource.Name,
             resource.Location,
             resource.Bio,

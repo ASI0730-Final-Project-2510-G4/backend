@@ -20,7 +20,7 @@ public static class ProfileResourceFromEntityAssembler
                 entity.Social.Facebook,
                 entity.Social.X
             ),
-            entity.UserId // 👈 AÑADIDO AQUÍ
+            entity.UserId 
         );
     }
 }

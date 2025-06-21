@@ -13,7 +13,7 @@ public class IamContextFacade(
     // <inheritdoc />
     public async Task<int> CreateUser(string email, string password, string role)
     {
-        var signUpCommand = new SignUpCommand(email, password, role); // Ahora se usa el role recibido
+        var signUpCommand = new SignUpCommand(email, password, role); 
         await userCommandService.Handle(signUpCommand);
 
         var getUserByEmailQuery = new GetUserByEmailQuery(email);

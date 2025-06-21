@@ -112,7 +112,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
 
         builder.Entity<Project>().Property(p => p.ProfileId).IsRequired();
 
-// ✅ Relación correcta con Profile
+//  Relación  con Profile
         builder.Entity<Project>()
             .HasOne(p => p.Profile)
             .WithMany()

@@ -9,13 +9,13 @@ namespace CreatiLinkPlatform.API.Projects.Application.Internal.CommandServices;
 
 public class ProjectCommandService(
     IProjectRepository projectRepository,
-    IProfileRepository profileRepository, // nuevo
+    IProfileRepository profileRepository, 
     IUnitOfWork unitOfWork)
     : IProjectCommandService
 {
     public async Task<Project?> Handle(CreateProjectCommand command)
     {
-        // ✅ Validación: ¿existe el perfil?
+     
         var profileExists = await profileRepository.FindByIdAsync(command.ProfileId);
         if (profileExists == null)
         {

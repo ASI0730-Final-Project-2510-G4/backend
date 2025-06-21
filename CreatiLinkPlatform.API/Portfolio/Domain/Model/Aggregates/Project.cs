@@ -22,7 +22,7 @@ public class Project
         Technologies = new List<string>();
     }
 
-    // Constructor actualizado para generar likes y comments automáticamente
+
     public Project(int profileId, string title, string image, string description, List<string> technologies)
     {
         ProfileId = profileId;
@@ -43,8 +43,6 @@ public class Project
         Description = description;
         Technologies = technologies ?? new List<string>();
 
-        // Opcional: podrías decidir si los likes y comments cambian o no en update
-        // Likes = rand.Next(0, 500).ToString(); // si quieres regenerarlos en updates también
-        // Comments = rand.Next(0, 100).ToString();
+    
     }
 }

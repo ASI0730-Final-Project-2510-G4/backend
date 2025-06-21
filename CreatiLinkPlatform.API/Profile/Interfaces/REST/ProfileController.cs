@@ -89,7 +89,7 @@ public class ProfilesController(
     [SwaggerResponse(StatusCodes.Status400BadRequest, "Invalid data or error creating the profile")]
     public async Task<IActionResult> CreateProfileTest([FromBody] CreateProfileResource resource)
     {
-        // 🟡 Aceptamos el userId directamente del body para probar
+  
         if (resource.UserId <= 0)
             return BadRequest("Invalid or missing UserId");
 
