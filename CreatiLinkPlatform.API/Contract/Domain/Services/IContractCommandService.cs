@@ -1,4 +1,4 @@
-﻿namespace CreatiLink_platform.Contract.Domain.Services;
+﻿namespace CreatiLinkPlatform.Contract.Domain.Services;
 
 public interface IContractCommandService
 {

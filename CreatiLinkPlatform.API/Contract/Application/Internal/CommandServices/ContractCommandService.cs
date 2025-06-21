@@ -1,4 +1,4 @@
-﻿namespace CreatiLink_platform.Contract.Application.Internal.CommandServices;
+﻿namespace CreatiLinkPlatform.Contract.Application.Internal.CommandServices;
 
 public class ContractCommandService
 {

@@ -1,3 +1,9 @@
-﻿namespace CreatiLink_platform.Contract.Interfaces.REST.Resources;
+﻿namespace CreatiLinkPlatform.Contract.Interfaces.REST.Resources;
 
-public record CreateContractResource();
+public record CreateContractResource(
+    int UserId,
+    int ProfileId,
+    decimal Price,
+    string Requirements,
+    string DesignType
+);

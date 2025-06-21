@@ -1,6 +1,3 @@
-﻿namespace CreatiLink_platform.Contract.Domain.Model.Commands;
+﻿namespace CreatiLinkPlatform.Contract.Domain.Model.Commands;
 
-public class UpdateContractCommand
-{
-    
-}
+public record UpdateContractCommand(int ContractId);

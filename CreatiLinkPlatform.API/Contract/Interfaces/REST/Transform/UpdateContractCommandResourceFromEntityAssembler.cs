@@ -1,4 +1,4 @@
-﻿namespace CreatiLink_platform.Contract.Interfaces.REST.Transform;
+﻿namespace CreatiLinkPlatform.Contract.Interfaces.REST.Transform;
 
 public class UpdateContractCommandResourceFromEntityAssembler
 {

@@ -1,3 +1,9 @@
-﻿namespace CreatiLink_platform.Contract.Domain.Model.Commands;
+﻿namespace CreatiLinkPlatform.Contract.Domain.Model.Commands;
 
-public record CreateContractCommand();
+public record CreateContractCommand(
+    int ClientUserId,
+    int DesignerProfileId,
+    decimal Price,
+    string Requirements,
+    string DesignType
+    );

@@ -1,3 +1,3 @@
-﻿namespace CreatiLink_platform.Contract.Domain.Model.Queries;
+﻿namespace CreatiLinkPlatform.Contract.Domain.Model.Queries;
 
-public record GetContractByIdQuery();
+public record GetContractByIdQuery(int  ContractId);

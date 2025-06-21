@@ -1,4 +1,4 @@
-﻿namespace CreatiLink_platform.Contract.Interfaces.REST;
+﻿namespace CreatiLinkPlatform.Contract.Interfaces.REST;
 
 public class ContractsController
 {

@@ -1,9 +1,6 @@
 ﻿namespace CreatiLinkPlatform.Contract.Interfaces.REST.Resources;
 
-public record ContractResource(
-    int Id,
-    int UserId,
-    int ProfileId,
+public record UpdateContractResource(
     decimal Price,
     string Requirements,
     string DesignType

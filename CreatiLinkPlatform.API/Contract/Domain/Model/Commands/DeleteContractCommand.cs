@@ -1,3 +1,9 @@
-﻿namespace CreatiLink_platform.Contract.Domain.Model.Commands;
+﻿namespace CreatiLinkPlatform.Contract.Domain.Model.Commands;
 
-public record DeleteContractCommand();
+public record DeleteContractCommand(
+    int ContractId,
+    decimal Price,
+    string Requirements,
+    string DesignType
+    
+    );

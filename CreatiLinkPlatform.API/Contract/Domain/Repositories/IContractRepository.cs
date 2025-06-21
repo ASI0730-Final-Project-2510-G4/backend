@@ -1,4 +1,4 @@
-﻿namespace CreatiLink_platform.Contract.Domain.Repositories;
+﻿namespace CreatiLinkPlatform.Contract.Domain.Repositories;
 
 public interface IContractRepository
 {

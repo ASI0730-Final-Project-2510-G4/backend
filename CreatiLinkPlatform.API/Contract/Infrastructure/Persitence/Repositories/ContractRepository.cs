@@ -1,4 +1,4 @@
-﻿namespace CreatiLink_platform.Contract.Infrastructure.Persitence.Repositories;
+﻿namespace CreatiLinkPlatform.Contract.Infrastructure.Persitence.Repositories;
 
 public class ContractRepository
 {
