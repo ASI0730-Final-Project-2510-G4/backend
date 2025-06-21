@@ -133,18 +133,16 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
 
         // Relationship with ClientUser
         builder.Entity<Contract>()
-            .HasOne(c => c.ClientUser)
+            .HasOne<Users>(c => c.ClientUser)
             .WithMany()
-            .HasForeignKey(c => c.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .HasForeignKey(c => c.ClientUserId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        // Relationship with DesignerProfile
         builder.Entity<Contract>()
-            .HasOne(c => c.DesignerProfile)
+            .HasOne<Users>(c => c.DesignerProfile)
             .WithMany()
-            .HasForeignKey(c => c.ProfileId)
-            .OnDelete(DeleteBehavior.Cascade);
-        
+            .HasForeignKey(c => c.DesignerProfileId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
     
     

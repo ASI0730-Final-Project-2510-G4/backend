@@ -12,7 +12,7 @@ public class ContractRepository(AppDbContext context) : BaseRepository<Domain.Mo
         await Context.Set<Contract>()
             .Include(c => c.ClientUser)
             .Include(c => c.DesignerProfile)
-            .Where(c => c.UserId == userId)
+            .Where(c => c.ClientUserId == userId)
             .ToListAsync();
 
     public async Task<Contract?> FindContractByIdAsync(int contractId) =>
@@ -25,12 +25,12 @@ public class ContractRepository(AppDbContext context) : BaseRepository<Domain.Mo
         await Context.Set<Contract>()
             .Include(c => c.ClientUser)
             .Include(c => c.DesignerProfile)
-            .Where(c => c.ProfileId == designerProfileId)
+            .Where(c => c.DesignerProfileId == designerProfileId)
             .ToListAsync();
 
     public async Task<bool> ContractExistsForUserAndDesignerProfileAsync(int userId, int designerProfileId) =>
         await Context.Set<Contract>()
-            .AnyAsync(c => c.UserId == userId && c.ProfileId == designerProfileId);
+            .AnyAsync(c => c.ClientUserId == userId && c.DesignerProfileId == designerProfileId);
 
     public async Task<IEnumerable<Contract>> FindAllContractsAsync() =>
         await Context.Set<Contract>()

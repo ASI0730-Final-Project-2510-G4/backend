@@ -13,26 +13,23 @@ namespace CreatiLinkPlatform.ContractsManagement.Domain.Model.Aggregates;
 /// </remarks>
 public partial class Contract
 {
-    public int Id { get; }
-
-    public int UserId { get; internal set; }
-    public Users ClientUser { get; internal set; }
-
-    public int ProfileId { get; internal set; }
-    public Profile DesignerProfile { get; internal set; }
-
+    public int Id { get; set; }
+    public int ClientUserId { get; set; }
+    public int DesignerProfileId { get; set; }
     public decimal Price { get; set; }
     public string Requirements { get; set; }
     public string DesignType { get; set; }
 
+    public Users ClientUser { get; set; } = null!;
+    public Users DesignerProfile { get; set; } = null!;
     public Contract()
     {
     }
 
     public Contract(CreateContractCommand command)
     {
-        UserId = command.ClientUserId;
-        ProfileId = command.DesignerProfileId;
+        ClientUserId = command.ClientUserId;
+       DesignerProfileId = command.DesignerProfileId;
         Price = command.Price;
         Requirements = command.Requirements;
         DesignType = command.DesignType;

@@ -20,8 +20,8 @@ public static class ContractResourceFromEntityAssembler
     {
         return new ContractResource(
             entity.Id,
-            entity.UserId,
-            entity.ProfileId,
+            entity.ClientUserId,
+            entity.DesignerProfileId,
             entity.Price,
             entity.Requirements,
             entity.DesignType
